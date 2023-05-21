@@ -12,18 +12,19 @@ SET search_path TO party;
 
 CREATE TABLE Users (
    id        SERIAL         PRIMARY KEY,
-   name      VARCHAR(255)   DEFAULT '', -- optional (?) user display name
+   name      VARCHAR(255)   DEFAULT '',
    email     VARCHAR(255)   UNIQUE DEFAULT '',
    phone     VARCHAR(255)   UNIQUE DEFAULT '',
-   hash      VARCHAR(255)   DEFAULT NULL, -- just in case we want password later
+   hash      VARCHAR(255)   DEFAULT NULL,
 );
 
 CREATE TABLE Sessions (
-   name     VARCHAR(255)   NOT NULL,
+   userId   INT            NOT NULL,
    token    VARCHAR(255)   NOT NULL,
    expiry   TIMESTAMP      NOT NULL,
 
-   PRIMARY KEY (token)
+   PRIMARY KEY (token),
+   FOREIGN KEY (userId) REFERENCES Users (id)
 );
 
 CREATE TABLE Parties (
