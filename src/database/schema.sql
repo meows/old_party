@@ -5,23 +5,23 @@ DROP SCHEMA IF EXISTS party CASCADE;
 CREATE SCHEMA party;
 SET search_path TO party;
 
--- CREATE DOMAIN 
+-- CREATE DOMAIN
 
 -- —————————————————————————————————————————————————————————————————————————————
 -- Tables
 
 CREATE TABLE Users (
    id        SERIAL         PRIMARY KEY,
-   email     VARCHAR(255)   UNIQUE DEFAULT NULL,
-   phone     VARCHAR(255)   UNIQUE DEFAULT NULL,
-   hash      VARCHAR(255)   NOT NULL
+   name      VARCHAR(255)   DEFAULT '', -- optional (?) user display name
+   email     VARCHAR(255)   UNIQUE DEFAULT '',
+   phone     VARCHAR(255)   UNIQUE DEFAULT '',
+   hash      VARCHAR(255)   DEFAULT NULL, -- just in case we want password later
 );
 
 CREATE TABLE Sessions (
    name     VARCHAR(255)   NOT NULL,
    token    VARCHAR(255)   NOT NULL,
    expiry   TIMESTAMP      NOT NULL,
-   client   BOOLEAN        NOT NULL DEFAULT TRUE,
 
    PRIMARY KEY (token)
 );
@@ -57,4 +57,4 @@ CREATE TABLE Messages (
 -- —————————————————————————————————————————————————————————————————————————————
 -- Indices
 
--- CREATE INDEX idx_messages_senderId ON Messages (senderId);
+CREATE INDEX idx_messages_senderId ON Messages (senderId);
