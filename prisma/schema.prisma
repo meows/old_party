@@ -26,10 +26,12 @@ model messages {
 model parties {
   id          Int        @id @default(autoincrement())
   name        String     @db.VarChar(255)
+  host        Int
   hostid      Int
   chatid      String     @db.VarChar(255)
   bannerimage Bytes
   chatrooms   chatrooms?
+  users       users      @relation(fields: [hostid], references: [id], onDelete: NoAction, onUpdate: NoAction)
 }
 
 model sessions {
@@ -45,4 +47,5 @@ model users {
   phone    String?    @unique @db.VarChar(255)
   hash     String     @db.VarChar(255)
   messages messages[]
+  parties  parties[]
 }

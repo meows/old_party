@@ -29,9 +29,12 @@ CREATE TABLE Sessions (
 CREATE TABLE Parties (
     id            SERIAL         PRIMARY KEY,
     name          VARCHAR(255)   NOT NULL,
+    host          INT            NOT NULL,
     hostId        INT            NOT NULL,
     chatId        VARCHAR(255)   NOT NULL,
-    bannerImage   BYTEA          NOT NULL
+    bannerImage   BYTEA          NOT NULL,
+
+    FOREIGN KEY (hostId) REFERENCES Users (id)
 );
 
 CREATE TABLE Chatrooms (
