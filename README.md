@@ -20,7 +20,7 @@
    ```
 
 3. Initialize your database
-   
+
    ```
    TODO: create DB reset script
    ```
