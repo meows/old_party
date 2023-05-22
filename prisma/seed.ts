@@ -6,7 +6,10 @@ const db = new PrismaClient()
 
 const users = [
    {
-
+      name: "Meow",
+      email: "",
+      phone: "",
+      hash: "",      
    }
 ]
 
@@ -14,13 +17,5 @@ const users = [
 // Execute Query
 
 async function main() {
-   db.users.createMany({
-      data: [
-         {
-            hash: "123",
-            email: "123",
-            phone: "123",
-         }
-      ]
-   })
+   db.users.createMany({ data: users })
 }

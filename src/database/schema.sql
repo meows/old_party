@@ -15,12 +15,12 @@ CREATE TABLE Users (
    name      VARCHAR(255)   DEFAULT '',
    email     VARCHAR(255)   UNIQUE DEFAULT '',
    phone     VARCHAR(255)   UNIQUE DEFAULT '',
-   hash      VARCHAR(255)   DEFAULT NULL,
+   hash      VARCHAR(255)   DEFAULT NULL
 );
 
 CREATE TABLE Sessions (
    userId   INT            NOT NULL,
-   token    VARCHAR(255)   NOT NULL,
+   token    VARCHAR(255),
    expiry   TIMESTAMP      NOT NULL,
 
    PRIMARY KEY (token),
