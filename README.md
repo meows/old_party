@@ -19,7 +19,7 @@
    npm i
    ```
 
-3. Setup database.
+3. Setup database schema & generate client.
 
    ```
    npx prisma db push
