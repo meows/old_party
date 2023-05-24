@@ -7,29 +7,36 @@
 
 # Installation
 
-1. Clone the repo.
+1. Clone repo.
 
    ```
    git clone git@github.com:meows/party.git && cd party
    ```
 
-2. Install the npm dependencies.
+2. Install npm dependencies.
 
    ```
    npm i
    ```
 
-3. Initialize your database
-   
+3. Setup database schema & generate client.
+
    ```
-   TODO: create DB reset script
+   npx prisma db push
    ```
 
-4. Start the dev server.
+4. Start dev server.
 
    ```
    npm run dev
    ```
+
+## Extras
+
+Launch a db explorer.
+```
+npx prisma studio
+```
 
 # Git Workflow
 

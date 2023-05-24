@@ -1,5 +1,5 @@
-import { Client } from "https://deno.land/x/postgres@v0.14.0/mod.ts"
-import env from "../../env.json" assert { type: "json" }
+import { Client } from "https://deno.land/x/postgres/mod.ts"
+import { config } from "https://deno.land/x/dotenv/mod.ts"
 
 // —————————————————————————————————————————————————————————————————————————————
 // Environment
@@ -24,3 +24,5 @@ const result = await client
    .catch(console.log)
 
 console.log(result)
+
+console.log(JSON.stringify(config()))
