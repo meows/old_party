@@ -1,8 +1,10 @@
-import { createNextApiHandler } from "@trpc/server/adapters/next";
+import { createNextApiHandler } from "@trpc/server/adapters/next"
 
-import { env } from "~/env.mjs";
-import { createTRPCContext } from "~/server/api/trpc";
-import { appRouter } from "~/server/api/root";
+import { env } from "~/env.mjs"
+import { createTRPCContext } from "~/server/api/trpc"
+import { appRouter } from "~/server/api/root"
+
+// https://trpc.io/docs/nextjs/setup
 
 // export API handler
 export default createNextApiHandler({
@@ -16,4 +18,4 @@ export default createNextApiHandler({
           );
         }
       : undefined,
-});
+})
