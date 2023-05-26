@@ -10,7 +10,13 @@ const users = [
       email: "",
       phone: "",
       hash: "",      
-   }
+   },
+   {
+      name: "Moo",
+      email: "",
+      phone: "",
+      hash: "",      
+   },
 ]
 
 // —————————————————————————————————————————————————————————————————————————————
@@ -19,3 +25,11 @@ const users = [
 async function main() {
    db.users.createMany({ data: users })
 }
+
+main()
+   .then(async () => db.$disconnect())
+   .catch(async (e) => {
+      console.error(e)
+      await db.$disconnect()
+      process.exit(1)
+   })
