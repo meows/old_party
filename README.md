@@ -23,6 +23,7 @@
 
    ```
    npx prisma db push
+   npx prisma db seed
    ```
 
 4. Start dev server.
