@@ -1,13 +1,13 @@
 "use client"
-// import styles from "./index.module.css";
-import { type NextPage } from "next";
-import Head from "next/head";
-import Link from "next/link";
+import styles from "./index.module.css"
+import { type NextPage } from "next"
+import Head from "next/head"
+import Link from "next/link"
 
-import { api } from "~/lib/api";
+import { api } from "~/lib/api"
 
 const Home: NextPage = () => {
-  const hello = api.example.hello.useQuery({ text: "from tRPC" });
+  const hello = api.example.hello.useQuery({ text: "from tRPC" })
 
   return (
     <>
@@ -51,7 +51,7 @@ const Home: NextPage = () => {
         </div>
       </main>
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
